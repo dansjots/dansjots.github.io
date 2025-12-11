@@ -19,9 +19,9 @@
     }
   </style>
   
-  <style>.fig {
-  display: block;
+  <style>figure {
   margin: 0 auto;
+  width: fit-content;
 }</style>
   <title id="title">Proof of Pythagorean theorem using Cartesian coordinates | Dan&apos;s Jots</title>
 
@@ -41,7 +41,8 @@
   <main id="main">
     
   <date>2025-11-30</date>
-  <svg class="fig" viewBox="0 -150 215 165" width="215" height="165">
+  <figure>
+<svg viewBox="0 -150 215 165" width="215" height="165">
     <g fill="none" stroke="currentColor">
         <polygon points="0,0 200,0 200,-150"/>
         <polyline points="200,-10 190,-10 190,0"/>
@@ -59,7 +60,9 @@
         <text x="165" y="-110" rotate="-37" dx="8">y</text>
     </g>
 </svg>
-<math display="block" class="tml-display" style="display:block math;"><mtable displaystyle="true" columnalign="right left" class="tml-jot"><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mi>r</mi></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><msub><mi>r</mi><mi>x</mi></msub><mo>+</mo><msub><mi>r</mi><mi>y</mi></msub></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>x</mi><mo>⋅</mo><mfrac><mi>x</mi><mi>r</mi></mfrac><mo>+</mo><mi>y</mi><mo>⋅</mo><mfrac><mi>y</mi><mi>r</mi></mfrac></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow><mspace width="0.2778em"></mspace><mo stretchy="false">⟹</mo><mspace width="0.2778em"></mspace><msup><mi>r</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><msup><mi>x</mi><mn class="tml-sml-pad">2</mn></msup><mo>+</mo><msup><mi>y</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd></mtr></mtable></math><p>This is essentially the well-known <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem#Proof_using_similar_triangles" target="_blank">proof by similarity</a>, but presented in coordinate geometry instead of classical notation.</p><p>It’s quite a simple rewrite that most will find too trivial to mention, and since a cursory web search didn’t turn up anything similar, I’ve documented it here for my own reference.</p><p>I find this symbolic form easier to parse compared to the traditional format which imposes extra cognitive load to track the operands.</p><p>Originally I was condensing <a href="https://terrytao.wordpress.com/2007/09/14/pythagoras-theorem/" target="_blank">Einstein’s area proof</a> into symbolic form. As the proportionality argument had to be conveyed in words, it is more concise to rewrite it as explicit expressions instead:</p><svg class="fig" viewBox="-1 -19 252 140" width="252" height="140">
+</figure>
+<math display="block" class="tml-display" style="display:block math;"><mtable displaystyle="true" columnalign="right left" class="tml-jot"><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mi>r</mi></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><msub><mi>r</mi><mi>x</mi></msub><mo>+</mo><msub><mi>r</mi><mi>y</mi></msub></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>x</mi><mo>⋅</mo><mfrac><mi>x</mi><mi>r</mi></mfrac><mo>+</mo><mi>y</mi><mo>⋅</mo><mfrac><mi>y</mi><mi>r</mi></mfrac></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow><mspace width="0.2778em"></mspace><mo stretchy="false">⟹</mo><mspace width="0.2778em"></mspace><msup><mi>r</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><msup><mi>x</mi><mn class="tml-sml-pad">2</mn></msup><mo>+</mo><msup><mi>y</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd></mtr></mtable></math><p>This is essentially the well-known <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem#Proof_using_similar_triangles" target="_blank">proof by similarity</a>, but presented in coordinate geometry instead of classical notation.</p><p>It’s quite a simple rewrite that most will find too trivial to mention, and since a cursory web search didn’t turn up anything similar, I’ve documented it here for my own reference.</p><p>I find this symbolic form easier to parse compared to the traditional format which imposes extra cognitive load to track the operands.</p><p>Originally I was condensing <a href="https://terrytao.wordpress.com/2007/09/14/pythagoras-theorem/" target="_blank">Einstein’s area proof</a> into symbolic form. As the proportionality argument had to be conveyed in words, it is more concise to rewrite it as explicit expressions instead:</p><figure>
+<svg class="fig" viewBox="-1 -19 252 140" width="252" height="140">
     <g fill="none" stroke="currentColor">
         <polyline points="0,0 160,120 250,0 0,0 0,120 250,120 250,0"/>
         <polyline points="170,0 170,10 160,10"/>
@@ -77,6 +80,7 @@
         <text x="207" y="17">y</text>
     </g>
 </svg>
+</figure>
 <math display="block" class="tml-display" style="display:block math;"><mtable displaystyle="true" columnalign="right left" class="tml-jot"><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow><mi>h</mi><mi>r</mi></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>h</mi><msub><mi>r</mi><mi>x</mi></msub><mo>+</mo><mi>h</mi><msub><mi>r</mi><mi>y</mi></msub></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>h</mi><mi>x</mi><mo>⋅</mo><mfrac><mi>x</mi><mi>r</mi></mfrac><mo>+</mo><mi>h</mi><mi>y</mi><mo>⋅</mo><mfrac><mi>y</mi><mi>r</mi></mfrac></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow><mspace width="0.2778em"></mspace><mo stretchy="false">⟹</mo><mspace width="0.2778em"></mspace><msup><mi>r</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><msup><mi>x</mi><mn class="tml-sml-pad">2</mn></msup><mo>+</mo><msup><mi>y</mi><mn class="tml-sml-pad">2</mn></msup></mrow></mtd></mtr></mtable></math><p>From here it’s straightforward realize that only the two legs’ projections onto the hypotenuse are relevant in the relation, since the height is common to all three areas. Factoring out the height brings us to the form presented above.</p>
 
   </main>
