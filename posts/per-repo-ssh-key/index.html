@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head id="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="/temml.css">
+  <style>
+    :root {
+      overflow-y: scroll;
+      font-size: 125%;
+      max-width: 80ch;
+      margin: 0 auto;
+    }
+    body {
+      margin-top: 0;
+    }
+    main {
+      line-height: 1.5;
+    }
+  </style>
+  
+  <style></style>
+  <title id="title">Self-contained repo-specific SSH key | Dan&apos;s Jots</title>
+
+</head>
+<body id="body">
+  
+  <nav>
+    <a href="/">Home</a>
+    |
+    <a href="/posts/">Posts</a>
+    
+    |
+    <a href="/remarks/2025/">Remarks</a>
+    
+  </nav>
+  <h1>Self-contained repo-specific SSH key</h1>
+  <main id="main">
+    
+  <date>2025-12-11</date>
+  <p>I exclusively set up my repositories with deploy keys, as I don’t to inadvertently push changes from the wrong account due to forgetting to change the machine-wide credential.</p><p>I used to keep several subdirectories inside my <code>.ssh</code> directory for per-account keys and manually copy-paste them outside whenever I want to push a specific repo, but it’s cumbersome and still error-prone.</p><p>Eventually I came across <a href="https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use/912281#912281" target="_blank">this SuperUser answer</a> and adopted it with my slight twist by leveraging the fact that the .git directory’s contents are well-behaved and don’t read or modify anything that it doesn’t recognize, so no risk of accidentally committing keys.</p><hr><p>Assuming the filename of your private key is <code>id_ed25519</code> and public key is <code>id_ed25519.pub</code>:</p><ol><li>Paste the file <code>id_ed25519</code> into the <code>.git</code> directory of your current repo, i.e. it should now be located at <code>&lt;your-repo-name&gt;/.git/id_ed25519</code>.</li><li>From your repository’s working directory, run in the terminal:<pre><code>git config core.sshCommand &quot;ssh -i .git/id_ed25519&quot;
+</code></pre></li><li>Now any time you push to the origin it will use that private key file instead of the one located in your user profile’s .ssh directory.</li></ol><hr><p>Obviously you can use a different filename for your private key, as long as you also change the git config command correspondingly.</p>
+
+  </main>
+
+</body>
