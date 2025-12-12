@@ -20,7 +20,7 @@
   </style>
   
   <style></style>
-  <title id="title">Self-contained repo-specific SSH key | Dan&apos;s Jots</title>
+  <title id="title">Put SSH keys in .git to make repos USB-portable | Dan&apos;s Jots</title>
 
 </head>
 <body id="body">
@@ -34,12 +34,12 @@
     <a href="/remarks/2025/">Remarks</a>
     
   </nav>
-  <h1>Self-contained repo-specific SSH key</h1>
+  <h1>Put SSH keys in .git to make repos USB-portable</h1>
   <main id="main">
     
   <date>2025-12-11</date>
-  <p>I exclusively set up my repositories with deploy keys, as I don’t to inadvertently push changes from the wrong account due to forgetting to change the machine-wide credential.</p><p>I used to keep several subdirectories inside my <code>.ssh</code> directory for per-account keys and manually copy-paste them outside whenever I want to push a specific repo, but it’s cumbersome and still error-prone.</p><p>Eventually I came across <a href="https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use/912281#912281" target="_blank">this SuperUser answer</a> and adopted it with my slight twist by leveraging the fact that the .git directory’s contents are well-behaved and don’t read or modify anything that it doesn’t recognize, so no risk of accidentally committing keys.</p><hr><p>Assuming the filename of your private key is <code>id_ed25519</code> and public key is <code>id_ed25519.pub</code>:</p><ol><li>Paste the file <code>id_ed25519</code> into the <code>.git</code> directory of your current repo, i.e. it should now be located at <code>&lt;your-repo-name&gt;/.git/id_ed25519</code>.</li><li>From your repository’s working directory, run in the terminal:<pre><code>git config core.sshCommand &quot;ssh -i .git/id_ed25519&quot;
-</code></pre></li><li>Now any time you push to the origin it will use that private key file instead of the one located in your user profile’s .ssh directory.</li></ol><hr><p>Obviously you can use a different filename for your private key, as long as you also change the git config command correspondingly.</p>
+  <p>My repository remotes are set up to use deploy keys exclusively, as I don’t want to inadvertently push changes from the wrong account due to forgetting to change the local machine user’s credentials.</p><p>I used to do so by keeping several subdirectories inside my .ssh directory for per-account keys and manually pasting them outside whenever I want to push a specific repo, but it’s cumbersome and still quite error-prone.</p><p>Eventually I came across <a href="https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use/912281#912281" target="_blank">this SuperUser answer</a> and adapted it with my slight twist leveraging the fact that the .git directory’s contents are well-behaved and don’t read or modify anything that Git doesn’t recognize, so no risk of accidentally committing keys.</p><hr><p>Assuming the filenames of your private/public keypair are respectively <code>id_ed25519</code> and <code>id_ed25519.pub</code>:</p><ol><li>Paste the private key file <code>id_ed25519</code> into the .git directory of your current repo,<br>i.e. it should be located at <code>&lt;your-repo-name&gt;/.git/id_ed25519</code> now.</li><li>From your repository’s working directory, run in the terminal:<pre><code>git config core.sshCommand &quot;ssh -i .git/id_ed25519&quot;
+</code></pre></li></ol><p>(Since SSH don’t actually care about the key’s filename, you can rename your keyfile to a more descriptive one as long as you reconfigure the sshCommand accordingly to refer to the right file)</p><hr><p>Now anytime you push this repository to remote, it will use that private key file instead of the one located in your machine user’s .ssh directory.</p><p>This setup is localized to that repo and is entirely self-contained, i.e. you can move the repo to a different path or place it on a thumb drive to a different machine and it will work without reconfiguring.</p>
 
   </main>
 
