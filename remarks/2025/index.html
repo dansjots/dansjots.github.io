@@ -53,6 +53,32 @@
   <main id="main">
     
   
+  
+  
+    <section>
+      <div id="2025-12-13T13:52:22Z"><p> Set up an always-running yggmail server that I connect to via Tailscale.</p><p>Had to figure out that you need to explicitly map the tcp ports on your Tailnet via <code>tailscale serve</code>, since the mail server listens on two ports (1025 and 1134 for SMTP and IMAP by default, respectively)</p><pre><code>tailscale serve --bg 1143 1143
+tailscale serve --bg 1025 1025
+yggmail -peer=&lt;address to your choice of yggmail peer&gt;
+</code></pre><p>To use it with DeltaChat you’ll need to configure the mail server as follows:</p><pre><code>E-Mail Address: &lt;your yggmail pubic key&gt;@yggmail
+Existing Password: ********
+
+Inbox:
+IMAP Login Name: &lt;leave to default&gt;
+IMAP Server: &lt;name of your server on the tailnet&gt;
+IMAP Port: 1143
+IMAP Security: Off
+
+Outbox:
+SMTP Login Name: &lt;leave to default&gt;
+SMTP Password: &lt;leave to default&gt;
+SMTP Server: &lt;name of your server on the tailnet&gt;
+SMTP Port: 1025
+SMTP Security: Off
+Certificate Checks: &lt;leave to default&gt;
+</code></pre></div>
+      <a href="/remarks/2025/#2025-12-13T13:52:22Z"><date>2025-12-13 Sat 13:52:22Z</date></a>
+    </section>
+  
     <section>
       <div id="2025-12-11T19:29:39Z"><p> The presentation of software tends be rather feast-or-famine:</p><ul><li>Case 1: you’re a “technical user”, in which case you’re expected to already possess all prerequisite mental models of the referenced shorthands mentioned in subsequent instructions (or to slog through endless indirections of also jargon-laden sources all expecting the same) with no attempts made at explaining the context or rationale.</li><li>Case 2: you’re “non-technical”, in which case you’re treated as total invalids with no ability to comprehend anything more complex than a faucet, and everything is designed to insulate you from any glimpse of plumbing whatsoever, all escape hatch sealed off with babyproof foam lest you cut yourself on sharp edges or get confused and lose patience.</li></ul><p>This dichotomy results in the neglect of a middleground demographic of non-technical but intelligent power users. They may lack prior domain-specific knowledge, but are fully capable of understanding the concepts when instructed patiently.</p><p>Such demographic are willing to go through some degree of complexity, if only you be upfront and brief them on the kinds of rough edges they may expect to encounter and most importantly the context behind why it is that way.</p><p>In my opinion, instead of “keep polishing until it’s end-user ready” and pretending that rough edges don’t exist at all as long as you stay on the golden path, that effort is better-spent directed towards trying bring them onto the same page as yourself.</p><p>The key is to give them a sense of agency, such that even when hiccups occur they at least feel being in the driver’s seat.</p></div>
       <a href="/remarks/2025/#2025-12-11T19:29:39Z"><date>2025-12-11 Thu 19:29:39Z</date></a>
