@@ -22,6 +22,16 @@
   
   <style></style>
   <title id="title">Put SSH keys in .git to make repos USB-portable | Dan&apos;s Jots</title>
+  <script>
+  if (window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches && localStorage.getItem('dark-mode')) {
+    meta = document.createElement('meta');
+    meta.setAttribute('name', 'color-scheme');
+    meta.setAttribute('content', 'light dark');
+    document.currentScript.replaceWith(meta);
+  } else {
+    document.currentScript.outerHTML = '';
+  }
+  </script>
 
 </head>
 <body id="body">
@@ -34,6 +44,35 @@
     |
     <a href="/remarks/2025/">Remarks</a>
     
+    <script>
+    if (window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches) {
+      let toggle = document.createElement('a');
+      toggle.href = document.location;
+      toggle.textContent = localStorage.getItem('dark-mode') ? 'Dark' : 'Light';
+      toggle.style.position = 'absolute';
+      toggle.style.right = 0;
+      toggle.onclick = function(e) {
+        e.preventDefault();
+        let meta = document.querySelector('meta[name=color-scheme]');
+        if (meta) {
+          meta.outerHTML = '';
+          toggle.textContent = 'Light';
+          localStorage.removeItem('dark-mode');
+        } else {
+          meta = document.createElement('meta');
+          meta.setAttribute('name', 'color-scheme');
+          meta.setAttribute('content', 'light dark');
+          document.head.appendChild(meta);
+          toggle.textContent = 'Dark';
+          localStorage.setItem('dark-mode', 1);
+        }
+      };
+      document.currentScript.parentElement.style.position = 'relative';
+      document.currentScript.replaceWith(toggle);
+    } else {
+      document.currentScript.outerHTML = '';
+    }
+    </script>
   </nav>
   <h1>Put SSH keys in .git to make repos USB-portable</h1>
   <main id="main">
