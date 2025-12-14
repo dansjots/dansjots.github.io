@@ -55,6 +55,7 @@
         e.preventDefault();
         let meta = document.querySelector('meta[name=color-scheme]');
         if (meta) {
+          meta.setAttribute('content', 'light');
           meta.outerHTML = '';
           toggle.textContent = 'Light';
           localStorage.removeItem('dark-mode');
