@@ -61,15 +61,14 @@
     <script>
     if (window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches) {
       let toggle = document.createElement('a');
-      toggle.href = document.location;
+      toggle.href = 'javascript:';
       toggle.textContent = localStorage.getItem('dark-mode') ? 'Dark' : 'Light';
       toggle.style.position = 'absolute';
       toggle.style.right = 0;
-      toggle.onclick = function(e) {
-        e.preventDefault();
+      toggle.onclick = function() {
         let meta = document.querySelector('meta[name=color-scheme]');
         if (meta) {
-          meta.setAttribute('content', 'light');
+          meta.setAttribute('content', 'normal');
           meta.outerHTML = '';
           toggle.textContent = 'Light';
           localStorage.removeItem('dark-mode');
