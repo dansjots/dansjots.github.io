@@ -95,6 +95,16 @@
   
   
     <section>
+      <div id="2025-12-17T15:13:02Z"><p> <a href="https://www.sebastianaaltonen.com/blog/no-graphics-api" target="_blank">https://www.sebastianaaltonen.com/blog/no-graphics-api</a></p></div>
+      <a href="/remarks/2025/#2025-12-17T15:13:02Z"><date>2025-12-17 Wed 15:13:02Z</date></a>
+    </section>
+  
+    <section>
+      <div id="2025-12-17T15:07:15Z"><p> TIL there’s a <code>clip</code> command on Windows</p></div>
+      <a href="/remarks/2025/#2025-12-17T15:07:15Z"><date>2025-12-17 Wed 15:07:15Z</date></a>
+    </section>
+  
+    <section>
       <div id="2025-12-13T13:52:22Z"><p> Experimented with setting up an always-running yggmail server that I connect to via Tailscale.</p><p>Had to figure out that you need to explicitly map the tcp ports on your Tailnet via <code>tailscale serve</code>, since the mail server listens on two ports (1025 and 1134 for SMTP and IMAP by default, respectively)</p><pre><code>tailscale serve --bg --tcp 1143 1143
 tailscale serve --bg --tcp 1025 1025
 yggmail -peer=&lt;address to your choice of yggmail peer&gt;
