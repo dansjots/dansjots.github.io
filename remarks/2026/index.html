@@ -20,8 +20,22 @@
     }
   </style>
   
+  <style>
+    section {
+      box-shadow: inset currentColor 0px 1px;
+    }
+    section time {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+    section:has(> :target) {
+      background: linear-gradient(rgb(255 255 0 / 0.25), transparent);
+    }
+  </style>
+
   <style></style>
-  <title id="title">Dan&apos;s Jots</title>
+  <title id="title">Remarks | Dan&apos;s Jots</title>
   <script>
   if (window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches && localStorage.getItem('dark-mode')) {
     meta = document.createElement('meta');
@@ -74,25 +88,19 @@
     }
     </script>
   </nav>
-  <h1>Dan&apos;s Jots</h1>
+  <h1>Remarks</h1>
   <main id="main">
     
-  <p>A place to document things as how I understand them, nothing particularly insightful or novel.</p>
+  <a href="/remarks/2025/">Prev</a>
   
-  <h3>Latest Posts</h3>
-  <ul>
-    <li>
-      2025-12-11
-      <a href="/posts/per-repo-ssh-key/">Put SSH keys in .git to make repos USB-portable</a>
-    </li>
   
-    <li>
-      2025-11-30
-      <a href="/posts/pythagorean-cartesian-proof/">Proof of Pythagorean theorem using Cartesian coordinates</a>
-    </li>
-  </ul>
+    <section>
+      <div id="2026-01-05T23:59:35Z"><p> “When everyone’s super, no one will be.” – Syndrome (The Incredibles, 2004)</p><p>Applicable also in the sense of “commoditize your compliments”.</p></div>
+      <time datetime="2026-01-05T23:59:35Z">
+        <a href="/remarks/2026/#2026-01-05T23:59:35Z">2026-01-05 Mon 23:59:35Z</a>
+      </time>
+    </section>
   
-
 
   </main>
 
